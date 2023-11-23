@@ -100,7 +100,7 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
           children: [
             DrawerHeader(
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: AppColors.primaryColor,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,8 +109,8 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
                     width: 0,
                   ),
                   Image.asset(
-                    "assets/images/food_logo.png",
-                    height: 70,
+                    "assets/images/famasi_logo-removebg.png",
+                    height: 500,
                   ),
                   const SizedBox(
                     width: 0,

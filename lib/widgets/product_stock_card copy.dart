@@ -21,7 +21,7 @@ class _ProductStockCardWidgetState extends State<ProductStockCardWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+             Row(
               children: [
                 Expanded(
                   child: Text(
@@ -204,7 +204,7 @@ class _ProductStockCardWidgetState extends State<ProductStockCardWidget> {
                               );
                             },
                             borderRadius: BorderRadius.circular(14.0),
-                            child: const Row(
+                            child:  Row(
                               children: [
                                 Expanded(
                                     flex: 1,
@@ -236,13 +236,13 @@ class _ProductStockCardWidgetState extends State<ProductStockCardWidget> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 5.0, right: 5),
                     child: Material(
-                      borderRadius: BorderRadius.circular(5.0),
+                      borderRadius: BorderRadius.circular(50.0),
                       elevation: 0,
                       child: Container(
                         height: 40,
                         decoration: BoxDecoration(
                           color: AppColors.primaryColor,
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderRadius: BorderRadius.circular(50.0),
                         ),
                         child: Material(
                           color: Colors.transparent,
@@ -256,7 +256,7 @@ class _ProductStockCardWidgetState extends State<ProductStockCardWidget> {
                               );
                             },
                             borderRadius: BorderRadius.circular(14.0),
-                            child: const Row(
+                            child:  Row(
                               children: [
                                 Expanded(
                                     flex: 1,

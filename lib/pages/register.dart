@@ -59,24 +59,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.1,
+                      height: MediaQuery.of(context).size.height * 0.01,
                     ),
                     Center(
                       child: Image.asset(
-                        'assets/images/food_logo.png',
-                        height: 100,
+                        'assets/images/famasi_logo-removebg.png',
+                        height: 200,
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Center(
-                      child: Text(
-                        'SignUp Xxxx Food',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ),
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
+                    // const Center(
+                    //   child: Text(
+                    //     'SignUp ',
+                    //     style: TextStyle(
+                    //         fontWeight: FontWeight.bold, fontSize: 20),
+                    //   ),
+                    // ),
                   ],
                 ),
                 const SizedBox(
@@ -173,7 +173,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 32,
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -188,7 +188,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     height: 56,
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(14.0),
+                      borderRadius: BorderRadius.circular(40.0),
                     ),
                     child: Material(
                       color: Colors.transparent,
@@ -226,6 +226,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Navigator.pop(context);
                       },
                       child: const Text(
+                        style:TextStyle(
+                          color: Colors.blue
+                        ),
                         'Click here',
                       ),
                     ),

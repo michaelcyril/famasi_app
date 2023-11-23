@@ -1,5 +1,8 @@
+import 'package:famasi_app/pages/cart_page.dart';
 import 'package:famasi_app/utils/app_color.dart';
+import 'package:famasi_app/widgets/food_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SalePageScreen extends StatefulWidget {
   const SalePageScreen({super.key});
@@ -9,184 +12,60 @@ class SalePageScreen extends StatefulWidget {
 }
 
 class _SalePageScreenState extends State<SalePageScreen> {
-  TextEditingController userEmailController = TextEditingController();
-  TextEditingController userPasswordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
-  String? validateUsername(String? value) {
-    if (value!.isEmpty) {
-      return 'Email Field must not be empty';
-    } else {
-      if (validateEmail(value)) {
-        return null;
-      } else {
-        return 'Email Field must be valid';
-      }
-    }
-  }
-
-  bool validateEmail(String email) {
-    String pattern =
-        r'^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,})$';
-    RegExp regex = RegExp(pattern);
-    return regex.hasMatch(email);
-  }
-
+  var data = [
+    {
+      "title": "Burger",
+      "price": "30,000",
+      "image": "burger.png",
+    },
+    {
+      "title": "Burger",
+      "price": "30,000",
+      "image": "burger.png",
+    },
+    {
+      "title": "Burger",
+      "price": "30,000",
+      "image": "burger.png",
+    },
+    {
+      "title": "Burger",
+      "price": "30,000",
+      "image": "burger.png",
+    },
+    {
+      "title": "Burger",
+      "price": "30,000",
+      "image": "burger.png",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        controller: userEmailController,
-                        validator: validateUsername,
-                        keyboardType: TextInputType.number,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                8,
-                              ),
-                              borderSide: BorderSide.lerp(
-                                const BorderSide(color: Colors.black),
-                                const BorderSide(color: Colors.black),
-                                1,
-                              )),
-                          hintText: 'Quantity',
-                          hintStyle: const TextStyle(
-                            color: Colors.black45,
-                            fontSize: 14,
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      TextFormField(
-                        controller: userEmailController,
-                        // validator: validateUsername,
-                        keyboardType: TextInputType.number,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                8,
-                              ),
-                              borderSide: BorderSide.lerp(
-                                const BorderSide(color: Colors.black),
-                                const BorderSide(color: Colors.black),
-                                1,
-                              )),
-                          hintText: 'Price Per Product',
-                          hintStyle: const TextStyle(
-                            color: Colors.black45,
-                            fontSize: 14,
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      TextFormField(
-                        // controller: userPasswordController,
-                        keyboardType: TextInputType.datetime,
-                        // obscureText: true,
-                        // validator: validatePassword,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                8,
-                               ),
-                              borderSide: BorderSide.lerp(
-                                const BorderSide(color: Colors.black),
-                                const BorderSide(color: Colors.black),
-                                1,
-                              )),
-                          hintText: 'Expire date',
-                          hintStyle: const TextStyle(
-                            color: Colors.black45,
-                            fontSize: 14,
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 12,
-                    ),
-                  ],
-                ),
-                Material(
-                  borderRadius: BorderRadius.circular(14.0),
-                  elevation: 0,
-                  child: Container(
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(14.0),
-                    ),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        borderRadius: BorderRadius.circular(14.0),
-                        child: const Center(
-                          child: Text(
-                            'Sale',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-              ],
-            ),
-          ),
+      body: Padding(
+        padding: const EdgeInsets.only(left:12, right: 12),
+        child: MasonryGridView.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: 2,
+          crossAxisSpacing: 2,
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            return const FoodCardWidget();
+          },
         ),
       ),
+      
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: MaterialStateColor.resolveWith(
+              (states) => AppColors.primaryColor),
+          onPressed: () {
+            // addClientDialog();
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CartPageScreen(),));
+          },
+          child: const Icon(
+            Icons.local_grocery_store,
+            color: Colors.white,
+          )),
     );
   }
 }
