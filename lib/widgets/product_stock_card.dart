@@ -1,5 +1,6 @@
 import 'package:famasi_app/pages/add_stock.dart';
 import 'package:famasi_app/pages/stock_transaction_details.dart';
+import 'package:famasi_app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 class ProductStockCardWidget extends StatefulWidget {
@@ -148,6 +149,7 @@ class _ProductStockCardWidgetState extends State<ProductStockCardWidget> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
+                                backgroundColor: AppColors.primaryColor,foregroundColor: Colors.white
                               ),
                               child: const Text('Add Stock'),
                             ),
@@ -167,8 +169,9 @@ class _ProductStockCardWidgetState extends State<ProductStockCardWidget> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
+                                backgroundColor: AppColors.primaryColor,foregroundColor: Colors.white
                               ),
-                              child: const Text('View Records'),
+                              child: const Text('View Details'),
                             ),
                           ),
                         ],

@@ -13,69 +13,73 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const ListTile(
-            title: Text(
-              "kijitonyama@xxxxfood.com",
-              style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 14,
-                  color: Colors.black54),
+      backgroundColor: Colors.white,
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const ListTile(
+              title: Text(
+                "famasi@famasiapp.com",
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                    color: Colors.black54),
+              ),
+              leading: Icon(
+                Icons.email,
+                color: Colors.black45,
+              ),
             ),
-            leading: Icon(
-              Icons.email,
-              color: Colors.black45,
+            const ListTile(
+              title: Text(
+                "+255693331836",
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                    color: Colors.black54),
+              ),
+              leading: Icon(
+                Icons.phone,
+                color: Colors.black45,
+              ),
             ),
-          ),
-          const ListTile(
-            title: Text(
-              "+255693331836",
-              style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 14,
-                  color: Colors.black54),
+            const ListTile(
+              title: Text(
+                "Famasi Center",
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                    color: Colors.black54),
+              ),
+              leading: Icon(
+                Icons.roofing,
+                color: Colors.black45,
+              ),
             ),
-            leading: Icon(
-              Icons.phone,
-              color: Colors.black45,
+            ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UpdateProfileScreen(),
+                    ));
+              },
+              title: const Text(
+                "Change profile",
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                    color: Colors.black54),
+              ),
+              leading: const Icon(
+                Icons.edit_outlined,
+                color: Colors.black45,
+              ),
             ),
-          ),
-          const ListTile(
-            title: Text(
-              "Xxxxxx Food",
-              style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 14,
-                  color: Colors.black54),
-            ),
-            leading: Icon(
-              Icons.roofing,
-              color: Colors.black45,
-            ),
-          ),
-          ListTile(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const UpdateProfileScreen(),
-                  ));
-            },
-            title: const Text(
-              "Change profile",
-              style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 14,
-                  color: Colors.black54),
-            ),
-            leading: const Icon(
-              Icons.edit_outlined,
-              color: Colors.black45,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

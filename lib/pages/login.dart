@@ -69,16 +69,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 200,
                       ),
                     ),
-                    // const SizedBox(
-                    //   height: 20,
-                    // ),
-                    // const Center(
-                    //   child: Text(
-                    //     'Sign In',
-                    //     style: TextStyle(
-                    //         fontWeight: FontWeight.bold, fontSize: 20),
-                    //   ),
-                    // ),
                   ],
                 ),
                 const SizedBox(
@@ -147,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 32,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(

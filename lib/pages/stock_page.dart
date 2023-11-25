@@ -39,16 +39,20 @@ class _ProductStockPageScreenState extends State<ProductStockPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Column(
-              children: data.map((e) => const ProductStockCardWidget()).toList(),
-            ),
-          ],
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: data.map((e) => const ProductStockCardWidget()).toList(),
+              ),
+            ],
+          ),
         ),
       ),
     );

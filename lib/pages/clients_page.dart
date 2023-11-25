@@ -30,6 +30,7 @@ class _ClientsPageScreenState extends State<ClientsPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -42,7 +43,7 @@ class _ClientsPageScreenState extends State<ClientsPageScreen> {
                         children: [
                           ListTile(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ClientDebtsScreen(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const ClientDebtsScreen(),));
                             },
                             leading: const Icon(
                               Icons.person,
@@ -105,7 +106,7 @@ class _ClientsPageScreenState extends State<ClientsPageScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Row(
+                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(

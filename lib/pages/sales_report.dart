@@ -13,6 +13,7 @@ class _SalesReportScreenState extends State<SalesReportScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,7 +48,7 @@ class _SalesReportScreenState extends State<SalesReportScreen> {
                                     height: 5,
                                   ),
                                   Icon(
-                                    Icons.download,
+                                    Icons.remove_red_eye,
                                     color: Colors.black45,
                                   )
                                 ],
@@ -77,7 +78,7 @@ class _SalesReportScreenState extends State<SalesReportScreen> {
                                     height: 5,
                                   ),
                                   Icon(
-                                    Icons.download,
+                                    Icons.remove_red_eye,
                                     color: Colors.black45,
                                   )
                                 ],
@@ -112,7 +113,7 @@ class _SalesReportScreenState extends State<SalesReportScreen> {
                                       height: 5,
                                     ),
                                     Icon(
-                                      Icons.download,
+                                      Icons.remove_red_eye,
                                       color: Colors.black45,
                                     )
                                   ],
@@ -158,7 +159,7 @@ class _SalesReportScreenState extends State<SalesReportScreen> {
                         children: [
                           const ListTile(
                             title: Text(
-                              "Kitchen Couch",
+                              "Malafin",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14,

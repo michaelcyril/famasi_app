@@ -122,7 +122,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 const SizedBox(
                   height: 32,
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -136,8 +136,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   child: Container(
                     height: 56,
                     decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(14.0),
+                      color:Colors.blue,
+                      borderRadius: BorderRadius.circular(40.0),
                     ),
                     child: Material(
                       color: Colors.transparent,
@@ -145,7 +145,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        borderRadius: BorderRadius.circular(14.0),
+                        borderRadius: BorderRadius.circular(40.0),
                         child: const Center(
                           child: Text(
                             'Update',

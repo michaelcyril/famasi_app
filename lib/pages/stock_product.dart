@@ -41,6 +41,7 @@ class _StockProductScreenState extends State<StockProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -56,18 +57,21 @@ class _StockProductScreenState extends State<StockProductScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor:
-            MaterialStateColor.resolveWith((states) => AppColors.primaryColor),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddProductScreen()),
-          );
-        },
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
+      floatingActionButton: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(40.0)),
+        child: FloatingActionButton(
+          backgroundColor:
+              MaterialStateColor.resolveWith((states) => AppColors.primaryColor),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AddProductScreen()),
+            );
+          },
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
         ),
       ),
     );

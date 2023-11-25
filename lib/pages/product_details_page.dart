@@ -14,6 +14,7 @@ class _ProductDetailsPageScreenState extends State<ProductDetailsPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           "Product Details",
@@ -25,7 +26,7 @@ class _ProductDetailsPageScreenState extends State<ProductDetailsPageScreen> {
           children: [
             Center(
               child: Image.asset(
-                "assets/images/burger_title.png",
+                "assets/images/medicine.png",
                 height: 200,
               ),
             ),
@@ -41,7 +42,7 @@ class _ProductDetailsPageScreenState extends State<ProductDetailsPageScreen> {
                     children: [
                       Expanded(
                         child: Text(
-                          "Hamburger",
+                          "Panadol",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
@@ -63,7 +64,7 @@ class _ProductDetailsPageScreenState extends State<ProductDetailsPageScreen> {
                     height: 20,
                   ),
                   Text(
-                    "Our burgers feature juicy, perfectly seasoned prime beef patties cooked to perfection. Each bite is a burst of flavor and tenderness. Encased in a soft, toasted bun, our burgers are served in a fresh, artisanal bun that adds a delightful touch to every bite.",
+                    "Panadol is a widely recognized and trusted brand of medication designed to alleviate pain and reduce fever. The active ingredient, paracetamol, is known for its efficacy in providing relief from various types of pain, including headaches.",
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontWeight: FontWeight.normal,

@@ -9,8 +9,10 @@ class AddStockScreen extends StatefulWidget {
 }
 
 class _AddStockScreenState extends State<AddStockScreen> {
-  TextEditingController userEmailController = TextEditingController();
-  TextEditingController userPasswordController = TextEditingController();
+  TextEditingController quantityController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+
+  TextEditingController expireController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   String? validateUsername(String? value) {
     if (value!.isEmpty) {
@@ -60,7 +62,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                   child: Column(
                     children: [
                       TextFormField(
-                        controller: userEmailController,
+                        controller: quantityController,
                         validator: validateUsername,
                         keyboardType: TextInputType.number,
                         style: Theme.of(context).textTheme.bodyMedium,
@@ -91,7 +93,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                         height: 20,
                       ),
                       TextFormField(
-                        controller: userEmailController,
+                        controller: priceController,
                         // validator: validateUsername,
                         keyboardType: TextInputType.number,
                         style: Theme.of(context).textTheme.bodyMedium,
@@ -123,6 +125,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                       ),
                       TextFormField(
                         // controller: userPasswordController,
+                        controller: expireController,
                         keyboardType: TextInputType.datetime,
                         // obscureText: true,
                         // validator: validatePassword,
@@ -156,34 +159,39 @@ class _AddStockScreenState extends State<AddStockScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      width: 12,
+                      width: 2,
                     ),
                   ],
                 ),
-                Material(
-                  borderRadius: BorderRadius.circular(14.0),
-                  elevation: 0,
-                  child: Container(
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(14.0),
-                    ),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        borderRadius: BorderRadius.circular(14.0),
-                        child: const Center(
-                          child: Text(
-                            'Add',
-                            style: TextStyle(color: Colors.white),
+                Container(
+                  alignment: Alignment.bottomRight,
+                  color: Colors.white,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(40.0),
+                    elevation: 0,
+                    child: Container(
+                      height: 48,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.circular(40.0),
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          borderRadius: BorderRadius.circular(40.0),
+                          child: const Center(
+                            child: Text(
+                              'Add',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                       ),

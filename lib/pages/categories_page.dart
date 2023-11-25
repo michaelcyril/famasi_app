@@ -1,5 +1,5 @@
-import 'package:famasi_app/pages/add_category.dart';
-import 'package:famasi_app/pages/update_category.dart';
+// import 'package:famasi_app/pages/add_category.dart';
+// import 'package:famasi_app/pages/update_category.dart';
 import 'package:famasi_app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -13,27 +13,27 @@ class CategoriesPageScreen extends StatefulWidget {
 class _CategoriesPageScreenState extends State<CategoriesPageScreen> {
   var data = [
     {
-      "name": "oral drugs",
+      "name": "Oral drugs",
       "image": "biscuits_snacks.png",
       "total": "10",
     },
     {
-      "name": "injectable drugs",
+      "name": "Injectable drugs",
       "image": "food_beverage.png",
       "total": "5",
     },
     {
-      "name": "infusion fluids",
+      "name": "Infusion fluids",
       "image": "house_hold.png",
       "total": "7",
     },
     {
-      "name": "vaccines",
+      "name": "Vaccines",
       "image": "personal_care.png",
       "total": "10",
     },
     {
-      "name": "disinfectants",
+      "name": "Disinfectants",
       "image": "pet_care.png",
       "total": "10",
     },
@@ -41,6 +41,7 @@ class _CategoriesPageScreenState extends State<CategoriesPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -52,10 +53,10 @@ class _CategoriesPageScreenState extends State<CategoriesPageScreen> {
                   .map((e) => Column(
                         children: [
                           ListTile(
-                            leading: Image.asset(
-                              "assets/images/stock-images/${e['image']}",
-                              height: 40,
-                            ),
+                            // leading: Image.asset(
+                            //   "assets/images/stock-images/${e['image']}",
+                            //   height: 40,
+                            // ),
                             title: Text(e['name']!),
                             subtitle: Text(
                               "Total Products : ${e['total']!}",
@@ -80,7 +81,8 @@ class _CategoriesPageScreenState extends State<CategoriesPageScreen> {
           backgroundColor: MaterialStateColor.resolveWith(
               (states) => AppColors.primaryColor),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => AddCategoryScreen(),));
+            addCategoryDialog();
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCategoryScreen(),));
           },
           child: const Icon(
             Icons.add,
@@ -96,11 +98,12 @@ class _CategoriesPageScreenState extends State<CategoriesPageScreen> {
           case 'delete':
             break;
           case 'update':
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const UpdateCategoryScreen(),
-                ));
+          editCategoryDialog();
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) => const UpdateCategoryScreen(),
+            //     ));
             break;
         }
       },
@@ -115,6 +118,227 @@ class _CategoriesPageScreenState extends State<CategoriesPageScreen> {
             child: Text('Update'),
           ),
         ];
+      },
+    );
+  }
+
+  
+  TextEditingController nameController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  String? method;
+
+  addCategoryDialog() {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                       const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "Add category",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10, bottom: 10),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: nameController,
+                                style: const TextStyle(fontSize: 15),
+                                decoration: const InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(12)),
+                                    ),
+                                    labelText: 'Category Name'),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter category name';
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8),
+                              child: Material(
+                                borderRadius: BorderRadius.circular(14.0),
+                                elevation: 0,
+                                child: Container(
+                                  height: 56,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primaryColor,
+                                    borderRadius: BorderRadius.circular(14.0),
+                                  ),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        // Navigator.pop(context);
+                                        // Navigator.pop(context);
+                                        // Navigator.push(
+                                        //     context,
+                                        //     MaterialPageRoute(
+                                        //         builder: (context) =>
+                                        //             const ThankyouPageScreen()));
+                                      },
+                                      borderRadius: BorderRadius.circular(14.0),
+                                      child: const Center(
+                                        child: Text(
+                                          'Add',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ));
+      },
+    );
+  }
+
+
+
+  
+  TextEditingController nameController2 = TextEditingController();
+  final _formKey2 = GlobalKey<FormState>();
+
+  editCategoryDialog() {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Form(
+              key: _formKey2,
+              child: SingleChildScrollView(
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                       const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "Update category",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10, bottom: 10),
+                              child: TextFormField(
+                                keyboardType: TextInputType.text,
+                                controller: nameController,
+                                style: const TextStyle(fontSize: 15),
+                                decoration: const InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(12)),
+                                    ),
+                                    labelText: 'Category Name'),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter category name';
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8),
+                              child: Material(
+                                borderRadius: BorderRadius.circular(14.0),
+                                elevation: 0,
+                                child: Container(
+                                  height: 56,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primaryColor,
+                                    borderRadius: BorderRadius.circular(14.0),
+                                  ),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        // Navigator.pop(context);
+                                        // Navigator.pop(context);
+                                        // Navigator.push(
+                                        //     context,
+                                        //     MaterialPageRoute(
+                                        //         builder: (context) =>
+                                        //             const ThankyouPageScreen()));
+                                      },
+                                      borderRadius: BorderRadius.circular(14.0),
+                                      child: const Center(
+                                        child: Text(
+                                          'Update',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ));
       },
     );
   }

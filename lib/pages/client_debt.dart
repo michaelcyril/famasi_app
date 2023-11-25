@@ -13,6 +13,7 @@ class _ClientDebtsScreenState extends State<ClientDebtsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
         foregroundColor: Colors.white,
@@ -31,7 +32,7 @@ class _ClientDebtsScreenState extends State<ClientDebtsScreen> {
               children: data
                   .map((e) => Column(
                         children: [
-                          const ListTile(
+                           ListTile(
                             title: Text(
                               "Kitchen Couch",
                               style: TextStyle(

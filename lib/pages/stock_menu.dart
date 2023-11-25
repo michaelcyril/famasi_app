@@ -85,6 +85,8 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
         title: Text(
           title,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -103,35 +105,29 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
                 color: AppColors.primaryColor,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const SizedBox(
-                    width: 0,
-                  ),
                   Image.asset(
                     "assets/images/famasi_logo-removebg.png",
                     height: 500,
-                  ),
-                  const SizedBox(
-                    width: 0,
                   ),
                 ],
               ),
             ),
             ListTile(
-              title: const Row(
+              title: Row(
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.person,
+                      child: Image.asset(
+                        "assets/images/menu-images/profile.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Profile',
@@ -147,19 +143,20 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               },
             ),
             ListTile(
-              title: const Row(
+              title: Row(
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.warehouse,
+                      child: Image.asset(
+                        "assets/images/menu-images/stock.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Stock',
@@ -175,19 +172,20 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               },
             ),
             ListTile(
-              title: const Row(
+              title:  Row(
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.category,
+                      child: Image.asset(
+                        "assets/images/menu-images/category.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Categories',
@@ -203,19 +201,20 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               },
             ),
             ListTile(
-              title: const Row(
+              title:  Row(
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.check_box_outline_blank,
+                      child: Image.asset(
+                        "assets/images/menu-images/products.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Products',
@@ -231,20 +230,21 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               },
             ),
             ListTile(
-              title: const Row(
+              title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.bar_chart,
+                      child: Image.asset(
+                        "assets/images/menu-images/report.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Sales Report',
@@ -260,20 +260,21 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               },
             ),
             ListTile(
-              title: const Row(
+              title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.shop,
+                      child: Image.asset(
+                        "assets/images/menu-images/sale.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Sale',
@@ -289,20 +290,21 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               },
             ),
             ListTile(
-              title: const Row(
+              title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.people,
+                      child: Image.asset(
+                        "assets/images/menu-images/clients.png",
+                        height: 24,
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
                     child: Text(
                       'Clients',
@@ -315,6 +317,36 @@ class _StockMenuPageScreenState extends State<StockMenuPageScreen> {
               onTap: () {
                 _onItemTapped(5);
                 Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Image.asset(
+                        "assets/images/menu-images/leave.png",
+                        height: 24,
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ),
+                  const Expanded(
+                    flex: 3,
+                    child: Text(
+                      'Logout',
+                      style: TextStyle(color: AppColors.primaryColor),
+                    ),
+                  ),
+                ],
+              ),
+              selected: _selectedIndex == 5,
+              onTap: () {
+                Navigator.pop(context);
+                // Navigator.pop(context);
               },
             ),
           ],

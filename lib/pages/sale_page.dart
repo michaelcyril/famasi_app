@@ -42,6 +42,7 @@ class _SalePageScreenState extends State<SalePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(left:12, right: 12),
         child: MasonryGridView.count(

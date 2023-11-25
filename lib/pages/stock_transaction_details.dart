@@ -15,6 +15,7 @@ class _StockTransactionsPageScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
         foregroundColor: Colors.white,
@@ -24,59 +25,56 @@ class _StockTransactionsPageScreenState
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Column(
-              children: data
-                  .map((e) => Column(
-                        children: [
-                          const ListTile(
-                            title: Text(
-                              "Kitchen Couch",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                                color: AppColors.primaryColor,
+        
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: data
+                    .map((e) => const Column(
+                          children: [
+                            ListTile(
+                              title: Text(
+                                "Panadol",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: AppColors.primaryColor,
+                                ),
+                              ),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Stock in at 12 Nov 2023, with the price 10,000/= per product.",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                      color: Colors.black45,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Stock before: 10, Stock after: 23.",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            subtitle: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Stock in at 12 Nov 2023, with the price 20,000/= per product.",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 13,
-                                    color: Colors.black45,
-                                  ),
-                                ),
-                                Text(
-                                  "Stock before: 10, Stock after: 23.",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                            child: Container(
-                              color: Colors.black12,
-                              height: 10,
-                              width: double.infinity,
-                            ),
-                          )
-                        ],
-                      ))
-                  .toList(),
-            ),
-          ],
+                          Divider(height: 2,)
+                          ],
+                        ))
+                    .toList(),
+              ),
+            ],
+          ),
         ),
       ),
     );

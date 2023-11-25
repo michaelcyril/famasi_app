@@ -61,6 +61,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
         foregroundColor: Colors.white,
@@ -124,9 +125,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                       children: imagefiles!.map((imageone) {
                         return Card(
                           child: SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: Image.file(File(imageone.path)),
+                            height: 100,
+                            width: 100,
+                            child: Image.file(File(imageone.path)),
                           ),
                         );
                       }).toList(),
@@ -148,8 +149,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                   underline: const SizedBox(),
                   style: const TextStyle(color: Colors.black, fontSize: 15),
                   items: <String>[
-                    'Biscuits Snacks',
-                    'Food and Beverage',
+                    'Syrup',
+                    'Pills',
+                    'Injection',
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
